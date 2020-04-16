@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    {% block head %} 
+
+        <title>Gym Manager</title> 
+        
+    {% endblock %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="fonts">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <a href="/" class="active">Instructors</a>
+            <a href="/members" class="active">Members</a>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    <footer id="links">
+        <a href="https://www.linkedin.com/in/lucas-felinto/" target="_blank"><img src="_imgs/linkedin.png"id="in"  alt=""></a>
+        <a href="https://github.com/lucas-felinto" target="_blank"><img src="_imgs/github.png" id="git" alt=""><a>
+    </footer>
+</body>
+</html>
