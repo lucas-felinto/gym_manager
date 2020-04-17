@@ -1,8 +1,5 @@
-const projects = document.querySelectorAll('.project') 
+// const button = document.getElementById('button-submit');
 
-for (let project of projects) {
-    project.addEventListener("click", function(){
-        const pageId = project.getAttribute("id");
-        window.location.href = `/courses?id=${pageId}` 
-    }) 
-}
+// button.addEventListener("click", function(){
+
+// }) 

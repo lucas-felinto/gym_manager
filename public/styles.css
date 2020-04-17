@@ -51,7 +51,7 @@ header a.active {
     border: 1px solid;
     margin: 48px auto;
     width: 650px;
-    height: 450px;
+    min-height: 450px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -111,4 +111,43 @@ header a.active {
     border-radius: 5px;
     padding: 5px;
     font-size: 15px;
+}
+
+/* FORM */
+
+input { 
+    width: 90%;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Roboto-bold', sans-serif;
+    opacity: 0.9;
+}
+
+input[type="checkbox"] {
+    width: initial;
+    margin-left: 4px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    opacity: 0.5;
+}
+
+select {
+    outline: none;
+    padding: 2px;
+}
+
+select option {
+    text-decoration: none;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 8px;
 }

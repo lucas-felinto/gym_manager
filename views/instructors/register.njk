@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="post" action="/instructors">
+        <section class="image" style="background: url(https://source.unsplash.com/collection/8353395) no-repeat center / cover">
+        </section>
+
+        <section class="details">
+            
+            <h3>INSTRUCTOR INFORMATIONS</h3>
+
+                <div class="item">
+                    <div>Avatar</div>
+                    <input type="url" name="avatar" placeholder="http://">
+                </div>
+
+                <div class="item">
+                    <div>Name</div>
+                    <input type="text" name="name" placeholder="Complete Name">
+                </div>
+    
+                <div class="item">
+                    <div>Birth</div>
+                    <input type="date" name="birth" id="">
+                </div>
+    
+                <div class="item">
+                    <div>Modalities</div>
+                    <select name="modalities">
+                      <option value=""></option> 
+                      <option value="CrossFit">CrossFit</option> 
+                      <option value="Muay Thati">Muay Thai</option>
+                      <option value="Spinning">Spinning</option>
+                    </select>
+                </div>
+
+                <div class="item" id="period_checkbox">
+                    <div>Period</div>
+                    <input type="checkbox" name="period" value="morning"> Morning
+                    <input type="checkbox" name="period" value="afternoon"> Afternoon
+                    <input type="checkbox" name="period" value="night"> Night
+                </div>
+    
+                <div class="item">
+                    <button type="submit" id="button-submit">Submit</button>
+                </div>
+
+        </section>
+    </form>
+<script src="/scripts.js"></script>
+{% endblock content %}

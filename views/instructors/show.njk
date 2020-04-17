@@ -1,0 +1,43 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="image" style="background: url({{ instructor.avatar }}) no-repeat center / cover">
+        </section>
+
+        <section class="details">
+            
+            <h3>INSTRUCTOR DETAILS</h3>
+
+                <div class="item">
+                    <div>Name</div>
+                    <div>{{ instructor.name }}</div>
+                </div>
+    
+                <div class="item">
+                    <div>Age</div>
+                    <div>{{ instructor.birth }}</div>
+                </div>
+    
+                <div class="item">
+                    <div>Modalities</div>
+                    {% for modality in instructor.modalities %}
+                    <span>{{ instructor.modalities }}</span>
+                    {% endfor %}
+                </div>
+
+                <div class="item">
+                    <div>Period</div>
+                    <div>{{ instructor.period }}</div>
+                </div>
+    
+                <div class="item">
+                    <div>Since</div>
+                    <div>{{ instructor.created_at }}</div>
+                </div>
+
+        </section>
+    </div>
+
+{% endblock content %}

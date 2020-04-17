@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar": "http://google.com",
+      "name": "Lucas Pinto",
+      "birth": 863913600000,
+      "modalities": "CrossFit",
+      "period": "morning",
+      "created_at": 1587151306651
+    }
+  ]
+}
