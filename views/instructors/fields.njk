@@ -1,0 +1,47 @@
+<div class="item">
+                <div>Avatar</div>
+                <input type="url" name="avatar" placeholder="http://" value="{{ instructor.avatar }}">
+            </div>
+
+            <div class="item">
+                <div>Name</div>
+                <input type="text" name="name" placeholder="Complete Name" value="{{ instructor.name }}">
+            </div>
+
+            <div class="item">
+                <div>Birth</div>
+                <input type="date" name="birth" id="" value="{{ instructor.birth }}">
+            </div>
+
+            <div class="item">
+                <div>Modalities</div>
+                <select name="modalities">
+                    <option value=""></option> 
+                    <option value="CrossFit" {% if instructor.modalities == "CrossFit" %}
+                    selected
+                    {% endif %}>CrossFit</option> 
+                    <option value="Muay Thai" {% if instructor.modalities == "Muay Thai" %}
+                    selected
+                    {% endif %}>Muay Thai</option>
+                    <option value="Spinning" {% if instructor.modalities == "Spinning" %}
+                    selected
+                    {% endif %}>Spinning</option>
+                </select>
+            </div>
+
+            <div class="item" id="period_checkbox">
+                <div>Period</div>
+                <input type="checkbox" name="period" value="Morning" {% if instructor.period == "Morning" %}
+                    checked
+                    {% endif %}> Morning
+                <input type="checkbox" name="period" value="Afternoon" {% if instructor.period == "Afternoon" %}
+                    checked
+                    {% endif %}> Afternoon
+                <input type="checkbox" name="period" value="Night" {% if instructor.period == "Night" %}
+                    checked
+                    {% endif %}> Night
+            </div>
+
+            <div class="item">
+                <button type="submit" id="button-submit">Submit</button>
+            </div>

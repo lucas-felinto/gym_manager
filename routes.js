@@ -23,6 +23,8 @@ routes.post("/instructors", instructors.post) //respond the instructors.js funct
 
 routes.get("/instructors/:id", instructors.show) //em routes: const { id } = req.params
 
+routes.get("/instructors/:id/edit", instructors.edit)
+
 routes.get("/members", function(req, res) { 
     return res.render("members") 
 }) 

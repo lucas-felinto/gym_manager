@@ -10,32 +10,34 @@
             
             <h3>INSTRUCTOR DETAILS</h3>
 
-                <div class="item">
-                    <div>Name</div>
-                    <div>{{ instructor.name }}</div>
-                </div>
-    
-                <div class="item">
-                    <div>Age</div>
-                    <div>{{ instructor.birth }}</div>
-                </div>
-    
-                <div class="item">
-                    <div>Modalities</div>
-                    {% for modality in instructor.modalities %}
-                    <span>{{ instructor.modalities }}</span>
-                    {% endfor %}
-                </div>
+            <div class="item">
+                <div>Name</div>
+                <div>{{ instructor.name }}</div>
+            </div>
 
-                <div class="item">
-                    <div>Period</div>
-                    <div>{{ instructor.period }}</div>
-                </div>
-    
-                <div class="item">
-                    <div>Since</div>
-                    <div>{{ instructor.created_at }}</div>
-                </div>
+            <div class="item">
+                <div>Age</div>
+                <div>{{ instructor.age }}</div>
+            </div>
+
+            <div class="item">
+                <div>Modalities</div>
+                {% for modality in instructor.modalities %}
+                <span>{{ modality }}</span>
+                {% endfor %}
+            </div>
+
+            <div class="item">
+                <div>Period</div>
+                <div>{{ instructor.period }}</div>
+            </div>
+
+            <div class="item">
+                <div>Since</div>
+                <div>{{ instructor.created_at }}</div>
+            </div>
+
+            <a href="*" class="button">Edit</a>
 
         </section>
     </div>
