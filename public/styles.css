@@ -165,3 +165,34 @@ a.button {
     border-radius: 5px;
     margin-top: 20px;
 }
+
+#form-delete button[type="submit"] {
+    margin-top: 0px;
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    font-family: 'Roboto-bold', sans-serif;
+} 
+
+/* INDEX INSTRUCTORS */
+
+.table-container {
+    background: white;
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: 'Roboto-bold', sans-serif;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+td, th {
+    padding: 10px;
+    border-bottom: 1px solid #d9d9d9;
+}

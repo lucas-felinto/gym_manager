@@ -2,6 +2,11 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, date } = require('./utils')
 
+//index
+exports.index = function(req, res){ //respond = render the static file index when GET the client requires
+    return res.render("instructors/index", { instructors: data.instructors })
+}
+
 // create 
 exports.post = function(req, res){
     
@@ -17,7 +22,7 @@ exports.post = function(req, res){
 
     birth = Date.parse(req.body.birth)                         // Tratamento dos Dados
     created_at = Date.now()
-    id = Number(data.instructors + 1)
+    id = Number(data.instructors.length + 1)
     
     data.instructors.push({ //Enviando para data.instructors:  //Organizando Dados
         id,
@@ -49,7 +54,6 @@ exports.show = function(req, res){
         ...foundInstructor,
         age: age(foundInstructor.birth),
         modalities: foundInstructor.modalities.split(","),
-        period: foundInstructor.period.split(","),
         created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
     }
 
@@ -61,14 +65,15 @@ exports.edit = function(req, res){
     const { id } = req.params
 
     const foundInstructor = data.instructors.find(function(instructor){    // <Procurando instrutor>
-    return instructor.id == id
+        return instructor.id == id
+    })
 
-})
     if (!foundInstructor) return res.send("Instructor not found")          // </Procurando instrutor>
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth),
+        id: Number(req.body.id)
     }
 
     return res.render("instructors/edit", { instructor })
@@ -85,21 +90,39 @@ exports.put = function(req, res){
             index = foundIndex
             return true
         }
+    })
 
-})
-    if (!foundInstructor) return res.send("Instructor not found")
-
-    const intructor = {
+    if (!foundInstructor) return res.send("Instructor not found")   
+    
+    const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }   
 
     data.instructors[index] = instructor
-    fs.writeFile("data.json", JSON.stringify(data, null, 2)), function(err) {
-        
-        return res.redirect(`/instructor/${id}`)
-    }
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send("Write Files Error")
+
+        return res.redirect(`/instructors/${id}`)
+    })
 
 }
 
+//delete
+exports.delete = function(req, res){
+    const { id } = req.body
+    const filteredInstructors = data.instructors.filter(function(instructor){
+        return instructor.id != id 
+    })
+
+    data.instructors = filteredInstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send("Delete Error")
+
+        return res.redirect("/instructors")
+    })
+}

@@ -11,24 +11,18 @@ routes.get("/", function(req, res){ //respond = redirect to /instructores when G
     return res.redirect("/instructors")
 })
 
-routes.get("/instructors", function(req, res){ //respond = render the static file index when GET the client requires
-    return res.render("instructors/index")
-})
-
+routes.get("/instructors", instructors.index)
 routes.get("/instructors/register", function(req, res){
     return res.render("instructors/register")
 })
-
-routes.post("/instructors", instructors.post) //respond the instructors.js function when the client POST
-
+routes.post("/instructors", instructors.post)
 routes.put("/instructors", instructors.put)
-
-routes.get("/instructors/:id", instructors.show) //em routes: const { id } = req.params
-
+routes.delete("/instructors", instructors.delete)
+routes.get("/instructors/:id", instructors.show)
 routes.get("/instructors/:id/edit", instructors.edit)
 
 routes.get("/members", function(req, res) { 
     return res.render("members") 
 }) 
 
-module.exports = routes //exports this file to the server
+module.exports = routes

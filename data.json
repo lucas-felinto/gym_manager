@@ -8,6 +8,24 @@
       "modalities": "CrossFit",
       "period": "Morning",
       "created_at": 1587151306651
+    },
+    {
+      "id": "2",
+      "avatar": "http://google.com",
+      "name": "Luiza de Oliveira",
+      "birth": 768960000000,
+      "modalities": "CrossFit",
+      "period": " Night",
+      "created_at": 1587475672059
+    },
+    {
+      "id": 3,
+      "avatar": "https://images.pexels.com/photos/1431283/pexels-photo-1431283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "name": "Julio Lemos",
+      "birth": 318729600000,
+      "modalities": "Muay Thai",
+      "period": "Morning",
+      "created_at": 1587492690140
     }
   ]
 }
