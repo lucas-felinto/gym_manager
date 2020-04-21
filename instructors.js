@@ -58,16 +58,48 @@ exports.show = function(req, res){
 
 //edit
 exports.edit = function(req, res){  
-        const { id } = req.params
-        const foundInstructor = data.instructors.find(function(instructor){
-        return instructor.id == id
-})
-        if (!foundInstructor) return res.send("Instructor not found")
+    const { id } = req.params
 
-        const instructor = {
-            ...foundInstructor,
-            birth: date(foundInstructor.birth)
+    const foundInstructor = data.instructors.find(function(instructor){    // <Procurando instrutor>
+    return instructor.id == id
+
+})
+    if (!foundInstructor) return res.send("Instructor not found")          // </Procurando instrutor>
+
+    const instructor = {
+        ...foundInstructor,
+        birth: date(foundInstructor.birth)
+    }
+
+    return res.render("instructors/edit", { instructor })
+}
+
+//put
+// salvar alterações no Back End
+exports.put = function(req, res){
+    const { id } = req.body
+    let index = 0
+
+    const foundInstructor = data.instructors.find(function(instructor, foundIndex){
+        if (instructor.id == id) { 
+            index = foundIndex
+            return true
         }
 
-        return res.render("instructors/edit", { instructor })
+})
+    if (!foundInstructor) return res.send("Instructor not found")
+
+    const intructor = {
+        ...foundInstructor,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }   
+
+    data.instructors[index] = instructor
+    fs.writeFile("data.json", JSON.stringify(data, null, 2)), function(err) {
+        
+        return res.redirect(`/instructor/${id}`)
+    }
+
 }
+
