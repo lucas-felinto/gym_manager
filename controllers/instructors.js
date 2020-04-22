@@ -1,13 +1,14 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, date } = require('./utils')
+const data = require('../data.json')
+const { age, date } = require('../utils')
 
-//index
 exports.index = function(req, res){ //respond = render the static file index when GET the client requires
     return res.render("instructors/index", { instructors: data.instructors })
 }
 
-// create 
+exports.register = function(req, res){
+    return res.render("instructors/register")
+}
 exports.post = function(req, res){
     
     const keys = Object.keys(req.body) //req.body holds parameters that are sent up from the client as part of a POST request. 
@@ -18,7 +19,7 @@ exports.post = function(req, res){
        }
     }
 
-    let { avatar, name, birth, modalities, period } = req.body // Desetruturação dos Dados
+    let { id, avatar, name, birth, modalities, period } = req.body // Desetruturação dos Dados
 
     birth = Date.parse(req.body.birth)                         // Tratamento dos Dados
     created_at = Date.now()
@@ -34,7 +35,6 @@ exports.post = function(req, res){
         created_at
     }) 
 
-//Recebendo e armazenando os dados
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){ 
         if (err) return res.send("Write file error")
 
@@ -42,13 +42,12 @@ exports.post = function(req, res){
     })
 }
 
-//show
 exports.show = function(req, res){
     const { id } = req.params
     const foundInstructor = data.instructors.find(function(instructor){
-        return instructor.id == id //encontrando instrutor
+        return id == instructor.id
     })
-    if (!foundInstructor) return res.send("Instructor not found")
+    if (!foundInstructor) return res.send("instructor not found")
 
     const instructor = {
         ...foundInstructor,
@@ -60,27 +59,24 @@ exports.show = function(req, res){
     return res.render("instructors/show", { instructor })
 }
 
-//edit
 exports.edit = function(req, res){  
     const { id } = req.params
 
-    const foundInstructor = data.instructors.find(function(instructor){    // <Procurando instrutor>
-        return instructor.id == id
+    const foundInstructor = data.instructors.find(function(instructor){    
+        return id == instructor.id
     })
 
-    if (!foundInstructor) return res.send("Instructor not found")          // </Procurando instrutor>
+    if (!foundInstructor) return res.send("instructor not found")          
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth),
-        id: Number(req.body.id)
+        birth: date(foundInstructor.birth).iso,
+        id: Number(foundInstructor.id)
     }
 
     return res.render("instructors/edit", { instructor })
 }
 
-//put
-// salvar alterações no Back End
 exports.put = function(req, res){
     const { id } = req.body
     let index = 0
@@ -92,7 +88,7 @@ exports.put = function(req, res){
         }
     })
 
-    if (!foundInstructor) return res.send("Instructor not found")   
+    if (!foundInstructor) return res.send("instructor not found")   
     
     const instructor = {
         ...foundInstructor,
@@ -111,14 +107,14 @@ exports.put = function(req, res){
 
 }
 
-//delete
 exports.delete = function(req, res){
     const { id } = req.body
-    const filteredInstructors = data.instructors.filter(function(instructor){
+
+    const filteredinstructors = data.instructors.filter(function(instructor){
         return instructor.id != id 
     })
 
-    data.instructors = filteredInstructors
+    data.instructors = filteredinstructors
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send("Delete Error")

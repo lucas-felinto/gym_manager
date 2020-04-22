@@ -7,23 +7,24 @@
         <section class="image" style="background: url(https://source.unsplash.com/collection/8353395) no-repeat center / cover">
         </section>
         
-        <section class="details">
-            <form action="/instructors?_method=PUT" method="POST">
-    
+        <section class="details">   
+        
+            <form action="/instructors/?_method=PUT" method="POST">
                 <h3>INSTRUCTOR EDIT</h3>
     
                 {% include 'instructors/fields.njk' %}
     
                 <input type="hidden" name="id" value="{{ instructor.id }}">
-
-            </form>      
+            
+            </form>
+    
             <form id="form-delete" action="/instructors?_method=DELETE" method="POST">
                 <input type="hidden" name="id" value="{{ instructor.id }}">
                 <button type="submit">DELETE</button>
             </form>
-            
-        </section>
 
+        </section>
+    
     </div>
-<script src="/scripts.js"></script>
+
 {% endblock content %}

@@ -1,8 +1,27 @@
 {
+  "members": [
+    {
+      "id": 1,
+      "avatar": "https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "name": "Luiza Machado",
+      "birth": 768960000000,
+      "created_at": 1587576138095
+    },
+    {
+      "avatar": "https://images.pexels.com/photos/1431283/pexels-photo-1431283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "name": "Lucas Felinto Pinto",
+      "email": "lucasfepinto@gmail.com",
+      "birth": 879206400000,
+      "blood": "O+",
+      "weight": "112",
+      "height": "112",
+      "id": 2
+    }
+  ],
   "instructors": [
     {
       "id": 1,
-      "avatar": "http://google.com",
+      "avatar": "https://images.pexels.com/photos/3289711/pexels-photo-3289711.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "name": "Lucas Pinto",
       "birth": 863913600000,
       "modalities": "CrossFit",
@@ -10,11 +29,11 @@
       "created_at": 1587151306651
     },
     {
-      "id": "2",
-      "avatar": "http://google.com",
-      "name": "Luiza de Oliveira",
+      "id": 2,
+      "avatar": "https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "name": "Luiza Machado",
       "birth": 768960000000,
-      "modalities": "CrossFit",
+      "modalities": "Muay Thai",
       "period": " Night",
       "created_at": 1587475672059
     },
@@ -23,8 +42,11 @@
       "avatar": "https://images.pexels.com/photos/1431283/pexels-photo-1431283.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "name": "Julio Lemos",
       "birth": 318729600000,
-      "modalities": "Muay Thai",
-      "period": "Morning",
+      "modalities": "Spinning",
+      "period": [
+        "Morning",
+        " Afternoon"
+      ],
       "created_at": 1587492690140
     }
   ]

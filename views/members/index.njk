@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card table-container">
+        
+        <a href="/members/register"> <span class="material-icons"> add_circle </span> </a>
+        
+        <table width="100%">
+        
+            <thead>
+                <tr> 
+                    <th>INSTRUCTOR</th>
+                    <th>MODALITY</th>
+                    <th>PERIOD</th>
+                    <th>INFO</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {% for instructor in instructors %}
+                <tr>
+                    <td> 
+                        <span style="background-image: url({{ instructor.avatar }})"> 
+                        </span>
+                        {{ instructor.name }} 
+                    </td>
+                    <td> <p>{{ instructor.modalities }}</p> </td>
+                    <td> {{ instructor.period }} </td>
+                    <td> <a href="/instructors/{{instructor.id}}">See</a></td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}

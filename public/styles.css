@@ -179,7 +179,7 @@ a.button {
 .table-container {
     background: white;
     display: block;
-    padding: 40px;
+    padding: 36px;
     box-sizing: border-box;
     font-family: 'Roboto-bold', sans-serif;
 }
@@ -196,3 +196,68 @@ td, th {
     padding: 10px;
     border-bottom: 1px solid #d9d9d9;
 }
+
+th {
+    text-transform: uppercase;
+}
+
+td {
+    color: rgba(0, 0, 0, 0.9);
+    font-family: 'Roboto-bold', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+tbody tr td:first-child span {
+    width: 55px;
+    height: 55px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px;
+    border: 2px solid white;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+}
+
+tbody tr td:last-child a {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 9px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.table-container thead tr th:last-child, td:last-child {
+    text-align: center;
+}
+
+td:nth-child(2) p {
+    display: inline-block;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 28px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}  
