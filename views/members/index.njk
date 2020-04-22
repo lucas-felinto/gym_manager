@@ -4,35 +4,41 @@
 
     <div class="card table-container">
         
-        <a href="/members/register"> <span class="material-icons"> add_circle </span> </a>
-        
         <table width="100%">
         
             <thead>
                 <tr> 
-                    <th>INSTRUCTOR</th>
-                    <th>MODALITY</th>
-                    <th>PERIOD</th>
+                    <th>MEMBER</th>
+                    <th>EMAIL</th>
+                    <th>WEIGHT</th>
+                    <th>HEIGHT</th>
                     <th>INFO</th>
                 </tr>
             </thead>
             <tbody>
 
-            {% for instructor in instructors %}
+                {% for member in members %}
                 <tr>
                     <td> 
-                        <span style="background-image: url({{ instructor.avatar }})"> 
+                        <span style="background-image: url({{ member.avatar }})"> 
                         </span>
-                        {{ instructor.name }} 
+                        {{ member.name }} 
                     </td>
-                    <td> <p>{{ instructor.modalities }}</p> </td>
-                    <td> {{ instructor.period }} </td>
-                    <td> <a href="/instructors/{{instructor.id}}">See</a></td>
+                    <td> {{ member.email }} </td>
+                    <td> {{ member.weight }}kg </td>
+                    <td> {{ member.height }}cm </td>
+                    <td> <a href="/members/{{member.id}}"><span class="material-icons">info</span></a></td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
 
             </tbody>
+
         </table>
+
+        <div class="icon">
+            <a href="/members/register"> <span class="material-icons"> add_circle </span> </a>
+        </div>
+        
     </div>
 
 {% endblock content %}

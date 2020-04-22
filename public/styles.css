@@ -224,26 +224,7 @@ tbody tr td:first-child {
     align-items: center;
 }
 
-tbody tr td:last-child a {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 9px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
 .table-container thead tr th:last-child, td:last-child {
-    text-align: center;
-}
-
-td:nth-child(2) p {
-    display: inline-block;
-    background: black;
-    color: white;
-    border-radius: 5px;
-    padding: 7px;
-    font-size: 15px;
     text-align: center;
 }
 
@@ -261,3 +242,8 @@ td:nth-child(2) p {
     white-space: nowrap;
     direction: ltr;
 }  
+
+div.icon {
+    margin-top: 15px;
+    margin-left: 260px;
+}

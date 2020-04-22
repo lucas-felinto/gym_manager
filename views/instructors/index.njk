@@ -4,8 +4,6 @@
 
     <div class="card table-container">
 
-        <a href="/instructors/register"> <span class="material-icons"> add_circle </span> </a>
-
         <table width="100%">
         
             <thead>
@@ -27,12 +25,18 @@
                     </td>
                     <td> <p>{{ instructor.modalities }}</p> </td>
                     <td> {{ instructor.period }} </td>
-                    <td> <a href="/instructors/{{instructor.id}}">See</a></td>
+                    <td> <a href="/instructors/{{instructor.id}}"><span class="material-icons">info</span></a></td>
                 </tr>
             {% endfor %}
 
             </tbody>
+            
         </table>
+
+        <div class="icon">
+            <a href="/instructors/register"> <span class="material-icons"> add_circle </span> </a>
+        </div>
+
     </div>
 
 {% endblock content %}
