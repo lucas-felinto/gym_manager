@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    {% block head %} 
+
+        <title>Gym Manager</title> 
+        
+    {% endblock %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="fonts">
+    <link rel="stylesheet" href="/styles.css">
+    
+</head>
+<body style="background: url('https://images.unsplash.com/photo-1580086319619-3ed498161c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') no-repeat center / cover">
+
+{% block content %}
+
+    <div class="card" style="margin-top: 85px">
+        <a href="/instructors"><section class="instruc-home" style="background: url('https://images.unsplash.com/photo-1517343985841-f8b2d66e010b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80') no-repeat center / cover"><p> INSTRUCTORS </p></section></a>
+
+        <a href="/members"><section class="memb-home" style="background: url('https://images.pexels.com/photos/2294403/pexels-photo-2294403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat center / cover"><p> MEMBERS </p></section></a>
+    </div>
+
+{% endblock %}
+
+</body>
+</html> 
+

@@ -9,22 +9,25 @@
         
         <section class="details">   
         
-            <form action="/instructors/?_method=PUT" method="POST">
-                <h3>INSTRUCTOR EDIT</h3>
-    
-                {% include 'instructors/fields.njk' %}
-    
-                <input type="hidden" name="id" value="{{ instructor.id }}">
+            <div>
+                <form action="/instructors/?_method=PUT" method="POST">
+                    <h3>INSTRUCTOR EDIT</h3>
+        
+                    {% include 'instructors/fields.njk' %}
+        
+                    <input type="hidden" name="id" value="{{ instructor.id }}">
+                
+                </form>
             
-            </form>
     
-            <form id="form-delete" action="/instructors?_method=DELETE" method="POST">
-                <input type="hidden" name="id" value="{{ instructor.id }}">
-                <button type="submit">DELETE</button>
-            </form>
-
-            <script>
-
+            
+                <form id="form-delete" action="/instructors?_method=DELETE" method="POST">
+                    <input type="hidden" name="id" value="{{ instructor.id }}">
+                    <button type="submit">DELETE</button>
+                </form>
+    
+                <script>
+    
                     const formDelete = document.querySelector("#form-delete")
                     formDelete.addEventListener("submit", function(event){
                         const confirmation = confirm("Delete?")
@@ -32,9 +35,10 @@
                                 event.preventDefault()
                             }
                     })
-
+    
                 </script>
-
+            
+            </div>
         </section>
     
     </div>

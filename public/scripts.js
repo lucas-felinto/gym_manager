@@ -8,5 +8,5 @@ for (item of menuItems) {
 }
 
 if (currentPage.includes("members")) {
-    document.body.style.backgroundImage = "url(https://images.pexels.com/photos/864990/pexels-photo-864990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"
+    document.body.style.backgroundImage = "url(https://images.pexels.com/photos/864939/pexels-photo-864939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"
 }

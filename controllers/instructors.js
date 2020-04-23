@@ -9,6 +9,7 @@ exports.index = function(req, res){ //respond = render the static file index whe
 exports.register = function(req, res){
     return res.render("instructors/register")
 }
+
 exports.post = function(req, res){
     
     const keys = Object.keys(req.body) //req.body holds parameters that are sent up from the client as part of a POST request. 

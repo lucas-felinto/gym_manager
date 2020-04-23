@@ -3,8 +3,12 @@ const routes = express.Router()
 const instructors = require('./controllers/instructors')
 const members = require('./controllers/members')
 
+//HOME
 routes.get("/", function(req, res){
-    return res.redirect("/instructors")
+    return res.redirect("/home")
+})
+routes.get("/home", function (req, res){
+    return res.render("home")
 })
 
 //INSTRUCTORS
