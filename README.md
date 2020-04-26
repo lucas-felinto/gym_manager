@@ -1,9 +1,7 @@
 <p align="center">
      <img alt="Launchbase" src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/logo.png" width="400px" />
-  </p>
-<p align="center">   
-<h1> Gym Manager </h1>
-</p>
+  </p> 
+<h1 align="center"> Gym Manager </h1>
 <p align="center">
   <a href="LICENSE" >
     <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
@@ -15,7 +13,7 @@
 </p>
 
 <h3 align="center">
- <a href="#sobre">Sobre</a> | <a href="#tecnologias">Tecnologias</a> | <a href="#etapas">Etapas</a> | <a href="#license">Licença</a> 
+ <a href="#sobre">About</a> | <a href="#tecnologias">Technologies</a> | <a href="#license">Licence</a> 
 </h3>
 
 <h2 align="center">
@@ -37,10 +35,12 @@ gifs aqui
 
 * <b><h3>Back End:</h3></b>
 - [x] Node.js
-- [x] NPM
-- [x] Nodemon
 - [x] Express
 - [x] Nunjucks
+- [x] NPM
+- [x] Nodemon
+- [x] Browser-Sync
+
 
 ## License
 
