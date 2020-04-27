@@ -17,7 +17,7 @@
 </h3>
 
 <h2 align="center">
-     Register and organize academy instructors and members!
+     Management system for instructors and members of a gym
 </h2>
 
 ## Sobre
