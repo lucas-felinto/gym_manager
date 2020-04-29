@@ -1,8 +1,13 @@
-const { age, date } = require('../../lib/utils')
+const { date } = require('../../lib/utils')
+const Member = require('../models/members')
 
 module.exports = {
     index (req, res) {
-    return res.render("members/index")
+
+        Member.all(function(members) {
+        return res.render("members/index", { members })
+        })
+
     },
     register (req, res) {
     return res.render("members/register")
@@ -15,26 +20,30 @@ module.exports = {
             return res.send('Please, fill out all fields')
         }
     }
-        return res.redirect("/members")
+    
+    Member.create(req.body, function(member){
+        return res.redirect(`/members/${member.id}`)
+    })
+        
     },
     show (req, res) {
-        const { id } = req.params
-        const foundMember = data.members.find(function(member){
-        return id == member.id
-    })
-    if (!foundMember) return res.send("member not found")
+        Member.find(req.params.id, function(member) {
+            if (!member) return res.send("Member Not Found")
+            
+            member.birth = date(member.birth).birthDay
 
-    const member = {
-        ...foundMember,
-        age: age(foundMember.birth),
-        modalities: foundMember.modalities.split(","),
-        created_at: new Intl.DateTimeFormat("en-GB").format(foundMember.created_at)
-    }
+            return res.render("members/show", { member })
+        })
 
-    return res.render("members/show")
     },
     edit (req, res) {
-        return
+        Member.find(req.params.id, function(member) {
+            if (!member) return res.send("Member Not Found")
+            
+            member.birth = date(member.birth).iso
+
+            return res.render("members/edit", { member })
+        })
     },
     put (req, res) {
         const keys = Object.keys(req.body)
@@ -44,9 +53,15 @@ module.exports = {
             return res.send('Please, fill out all fields')
         }
     }
-        return res.redirect("/members")
+
+        Member.update(req.body, function() {
+            return res.redirect(`/members/${req.body.id}`)
+        })
+
     },
     delete (req, res) {
-        return
+        Member.delete(req.body.id, function() {
+            return res.redirect(`/members`)
+        })
     }
 }

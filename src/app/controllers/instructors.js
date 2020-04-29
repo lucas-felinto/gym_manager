@@ -1,8 +1,13 @@
 const { age, date } = require('../../lib/utils')
+const Instructor = require('../models/instructors')
 
 module.exports = {
     index (req, res) {
-    return res.render("instructors/index", { instructors: data.instructors })
+
+        Instructor.all(function(instructors) {
+        return res.render("instructors/index", { instructors })
+        })
+
     },
     register (req, res) {
     return res.render("instructors/register")
@@ -15,26 +20,34 @@ module.exports = {
             return res.send('Please, fill out all fields')
         }
     }
-        return res.redirect("/instructors")
+    
+    Instructor.create(req.body, function(instructor){
+        return res.redirect(`/instructors/${instructor.id}`)
+    })
+        
     },
     show (req, res) {
-        const { id } = req.params
-        const foundInstructor = data.instructors.find(function(instructor){
-        return id == instructor.id
-    })
-    if (!foundInstructor) return res.send("instructor not found")
+        Instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send("Instructor Not Found")
+            
+            instructor.age = age(instructor.birth)
+            instructor.modalities = instructor.modalities.split(",")
+            instructor.created_at = date(instructor.created_at).format
 
-    const instructor = {
-        ...foundInstructor,
-        age: age(foundInstructor.birth),
-        modalities: foundInstructor.modalities.split(","),
-        created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
-    }
+            return res.render("instructors/show", { instructor })
+        })
 
-    return res.render("instructors/show", { instructor })
     },
     edit (req, res) {
-        return
+        Instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send("Instructor Not Found")
+            
+            instructor.birth = date(instructor.birth).iso
+            instructor.modalities = instructor.modalities.split(",")
+            instructor.created_at = date(instructor.created_at).format
+
+            return res.render("instructors/edit", { instructor })
+        })
     },
     put (req, res) {
         const keys = Object.keys(req.body)
@@ -44,9 +57,15 @@ module.exports = {
             return res.send('Please, fill out all fields')
         }
     }
-        return res.redirect("/instructors")
+
+        Instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
+
     },
     delete (req, res) {
-        return
+        Instructor.delete(req.body.id, function() {
+            return res.redirect(`/instructors`)
+        })
     }
 }
