@@ -10,7 +10,11 @@ module.exports = {
 
     },
     register (req, res) {
-    return res.render("members/register")
+
+        Member.instructorsSelectOptions(function(options) {
+        return res.render("members/register", { instructorOptions: options } )
+        })
+
     },
     post (req, res) {
         const keys = Object.keys(req.body)
@@ -39,11 +43,14 @@ module.exports = {
     edit (req, res) {
         Member.find(req.params.id, function(member) {
             if (!member) return res.send("Member Not Found")
-            
-            member.birth = date(member.birth).iso
-
-            return res.render("members/edit", { member })
+        
+        
+        member.birth = date(member.birth).iso
+        
+        Member.instructorsSelectOptions(function(options) {
+        return res.render("members/edit", { member, instructorOptions: options } )
         })
+    })   
     },
     put (req, res) {
         const keys = Object.keys(req.body)

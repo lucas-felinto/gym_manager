@@ -146,10 +146,13 @@ select option {
 button {
     background-color: black;
     color: white;
-    width: 100%;
     padding: 5px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.button-submit {
+    width: 100%;
     margin-top: 8px;
 }
 
@@ -305,4 +308,29 @@ div.icon {
     text-shadow: 0px 3px 2px rgba(150, 150, 150, 1);
     font-family: 'Anton', sans-serif;
     letter-spacing: 5px;
+}
+
+/* FILTERS */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-container button {
+    width: 55%;
+    margin-left: 40px;
+    padding: 7px;
+}
+
+.table-container .header input {
+    border: 1px solid #777;
+    padding: 4px 8px;
+    margin-left: 20px;
+    width: 170px;
+}
+.table-container .header a {
+    width: 10%;
 }

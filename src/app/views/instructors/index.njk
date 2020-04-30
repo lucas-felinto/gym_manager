@@ -5,12 +5,24 @@
     <div class="card table-container">
 
         <table width="100%">
-        
+
+        <div class="header">
+            
+            <a href="/instructors/register"> <span class="material-icons"> add_circle </span> </a>
+           
+            <form action="/instructors" method="GET">
+                <input type="text" name="filter" placeholder="Name, modality, period" value="{{filter}}">
+                <button type="submit">FILTER</button>
+            </form>
+
+        </div>
+    
             <thead>
                 <tr> 
                     <th>INSTRUCTOR</th>
                     <th>MODALITY</th>
                     <th>PERIOD</th>
+                    <th>STUDENTS</th>
                     <th>INFO</th>
                 </tr>
             </thead>
@@ -25,6 +37,7 @@
                     </td>
                     <td> <p>{{ instructor.modalities }}</p> </td>
                     <td> {{ instructor.period }} </td>
+                    <td> {{ instructor.total_students }} </td>
                     <td> <a href="/instructors/{{instructor.id}}"><span class="material-icons">info</span></a></td>
                 </tr>
             {% endfor %}
@@ -32,10 +45,6 @@
             </tbody>
             
         </table>
-
-        <div class="icon">
-            <a href="/instructors/register"> <span class="material-icons"> add_circle </span> </a>
-        </div>
 
     </div>
 
