@@ -21,8 +21,8 @@
 </h2>
 
 ## About
-- The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academ with functions to filter, consult including, editing, excluding members and instructors.
-- 
+
+ The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academ with functions to filter, consult including, editing, excluding members and instructors.
 
 <img src="https://user-images.githubusercontent.com/62717182/80836063-62796900-8bca-11ea-8ebc-6df93d5bba91.gif" width="1300"/>
 <img src="https://user-images.githubusercontent.com/62717182/80835919-18908300-8bca-11ea-821b-4b5aa1190e9f.gif" width="1300"/>
