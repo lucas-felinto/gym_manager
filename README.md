@@ -13,7 +13,7 @@
 </p>
 
 <h3 align="center">
- <a href="#about">About</a> | <a href="#tecnologies">Technologies</a> | <a href="#Cloning">Getting Started</a> | <a href="#license">Licence</a> 
+ <a href="#about">About</a> | <a href="#features">Features</a> | <a href="#Cloning">Getting Started</a> | <a href="#license">Licence</a> 
 </h3>
 
 <h2 align="center">
@@ -21,13 +21,13 @@
 </h2>
 
 ## About
-The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academ with functions to filter, consult including, editing, excluding members and instructors.
-
+- The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academ with functions to filter, consult including, editing, excluding members and instructors.
+- 
 
 <img src="https://user-images.githubusercontent.com/62717182/80836063-62796900-8bca-11ea-8ebc-6df93d5bba91.gif" width="1300"/>
 <img src="https://user-images.githubusercontent.com/62717182/80835919-18908300-8bca-11ea-821b-4b5aa1190e9f.gif" width="1300"/>
 
-## Tecnologies
+## Features
 * <b><h3>Front End:</h3></b>
 - [x] HTML
 - [x] CSS
@@ -49,10 +49,10 @@ The gym manager project was realized at Bootcamp Launchbase. The project consist
 ## Getting Started
 
 <b>Cloning Repository:</b>
-- `$ git clone https://github.com/lucas-felinto/gym_manager`
+- ```$ git clone https://github.com/lucas-felinto/gym_manager```
 
 <b>Downloading dependences:</b>
-- Move yourself to the appropriate directory
+<p>Move yourself to the appropriate directory</p>
 - `npm instal`
 
 <b>Server start:</b>
