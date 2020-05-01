@@ -53,7 +53,8 @@
 
 <b>Downloading dependences:</b>
 <p>Move yourself to the appropriate directory</p>
-- `npm instal`
+
+- ```npm instal```
 
 <b>Server start:</b>
 - `npm start`
