@@ -13,34 +13,51 @@
 </p>
 
 <h3 align="center">
- <a href="#sobre">About</a> | <a href="#tecnologias">Technologies</a> | <a href="#license">Licence</a> 
+ <a href="#about">About</a> | <a href="#features">Features</a> | <a href="#Cloning">Getting Started</a> | <a href="#license">Licence</a> 
 </h3>
 
 <h2 align="center">
      Management system for instructors and members of a gym
 </h2>
 
-## Sobre
-The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academy, including, editing and excluding members and instructors.
+## About
 
-gifs aqui
-gifs aqui
-gifs aqui
+ The gym manager project was realized at Bootcamp Launchbase. The project consists in manager an academ with functions to filter, consult including, editing, excluding members and instructors.
 
-## Tecnologias
+<img src="https://user-images.githubusercontent.com/62717182/80836063-62796900-8bca-11ea-8ebc-6df93d5bba91.gif" width="1300"/>
+<img src="https://user-images.githubusercontent.com/62717182/80835919-18908300-8bca-11ea-821b-4b5aa1190e9f.gif" width="1300"/>
+
+## Features
 * <b><h3>Front End:</h3></b>
 - [x] HTML
 - [x] CSS
 - [x] JavaScript
 
 * <b><h3>Back End:</h3></b>
-- [x] Node.js
-- [x] Express
+- [x] Developed in Node.js
+
+* <b><h4>Dependencies</h4></b>
+- [x] PostgreSQL
+- [x] Express Server 
+
+* <b><h4>Development Dependencies</h4></b>
 - [x] Nunjucks
 - [x] NPM
 - [x] Nodemon
 - [x] Browser-Sync
 
+## Getting Started
+
+<b>Cloning Repository:</b>
+- ```$ git clone https://github.com/lucas-felinto/gym_manager```
+
+<b>Downloading dependences:</b>
+<p>Move yourself to the appropriate directory</p>
+
+- ```npm instal```
+
+<b>Server start:</b>
+- `npm start`
 
 ## License
 
