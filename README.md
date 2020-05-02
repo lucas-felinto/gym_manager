@@ -37,7 +37,7 @@
 - [x] Developed in Node.js
 
 * <b><h4>Dependencies</h4></b>
-- [x] PostreSQL
+- [x] PostgreSQL
 - [x] Express Server 
 
 * <b><h4>Development Dependencies</h4></b>
