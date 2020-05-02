@@ -5,6 +5,17 @@
     <div class="card table-container">
         
         <table width="100%">
+
+        <div class="header">
+            
+            <a href="/members/register"> <span class="material-icons icon"> add_circle </span> </a>
+           
+            <form action="/members" method="GET">
+                <input type="text" name="filter" placeholder="Name or email" value="{{filter}}">
+                <button type="submit">FILTER</button>
+            </form>
+
+        </div>
         
             <thead>
                 <tr> 
@@ -34,11 +45,13 @@
             </tbody>
 
         </table>
-
-        <div class="icon">
-            <a href="/members/register"> <span class="material-icons"> add_circle </span> </a>
-        </div>
         
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}} 
+            data-filter={{filter}} 
+        ></div>
+
     </div>
 
 {% endblock content %}

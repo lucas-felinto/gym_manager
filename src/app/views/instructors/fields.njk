@@ -14,7 +14,7 @@
     </div>
 
     <div class="item">
-        <div>Modalities</div>
+        <div>Modality</div>
         <select name="modalities">
             <option value=""></option> 
             <option value="CrossFit" {% if instructor.modalities == "CrossFit" %}
@@ -26,6 +26,15 @@
             <option value="Spinning" {% if instructor.modalities == "Spinning" %}
             selected
             {% endif %}>Spinning</option>
+            <option value="Jumping" {% if instructor.modalities == "Jumping" %}
+            selected
+            {% endif %}>Jumping</option>
+            <option value="Musculation" {% if instructor.modalities == "Musculation" %}
+            selected
+            {% endif %}>Musculation</option>
+            <option value="Pilates" {% if instructor.modalities == "Pilates" %}
+            selected
+            {% endif %}>Pilates</option>
         </select>
     </div>
 
@@ -48,7 +57,7 @@
 </div>
 <script>
 
-const button = document.querySelector("#button-submit")
+const button = document.querySelector(".button-submit")
 
 button.addEventListener("click", function(event){
 

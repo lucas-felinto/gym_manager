@@ -183,9 +183,11 @@ a.button {
 .table-container {
     background: white;
     display: block;
-    padding: 20px;
     box-sizing: border-box;
     font-family: 'Roboto-bold', sans-serif;
+    min-width: 700px;
+    min-height: 480px;
+    padding: 25px;
 }
 
 .table-container table {
@@ -210,6 +212,7 @@ td {
     font-family: 'Roboto-bold', sans-serif;
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
 }
 
 tbody tr td:first-child span {
@@ -333,4 +336,31 @@ div.icon {
 }
 .table-container .header a {
     width: 10%;
+}
+
+.table-container {
+    display: grid;
+    grid-template: 60px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.table-container .pagination a, .pagintation span {
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.table-container .pagination a:hover {
+    filter: brightness(0.7);
+    border-bottom: 1px solid black;
 }
